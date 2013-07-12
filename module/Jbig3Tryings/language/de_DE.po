@@ -1,0 +1,69 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Jbig3Tryings\n"
+"POT-Creation-Date: 2013-06-24 11:04+0100\n"
+"PO-Revision-Date: 2013-06-24 12:05+0100\n"
+"Last-Translator: Gregory <gregory@n-28.com>\n"
+"Language-Team: Gregory <gregory@n-28.com>\n"
+"Language: deutsch\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: translate;translatePlural:1,2\n"
+"X-Poedit-Basepath: X:\\Dropbox\\Projekte\\workspace\\DefaultWorkSpace"
+"\\big5\\module\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: Jbig3Tryings\n"
+
+#: Jbig3Tryings/src/Jbig3Tryings/Form/RegisterForm.php:16
+msgid "RegisterAusRegsiterForm"
+msgstr ""
+
+#: Jbig3Tryings/view/jbig3-tryings/i18n/translate.phtml:9
+msgid "Nutzung des TranslateHelper"
+msgstr "Nutzung des TranslateHelper"
+
+#: Jbig3Tryings/view/jbig3-tryings/i18n/translate.phtml:13
+msgid "Some translated text."
+msgstr "Übersetzer Text aus PO"
+
+#: Jbig3Tryings/view/jbig3-tryings/i18n/translate.phtml:14
+msgid "Translated text from a custom text domain."
+msgstr "übersetzter Text mit text_domain"
+
+#: Jbig3Tryings/view/jbig3-tryings/i18n/translate.phtml:15
+#, php-format
+msgid "The current time is %s."
+msgstr "Die aktuelle Zeit ist %s."
+
+#: Jbig3Tryings/view/jbig3-tryings/i18n/translate.phtml:19
+msgid "Nutzung des TranslatePluralHelper"
+msgstr "Nutzung des TranslatePluralHelper"
+
+#: Jbig3Tryings/view/jbig3-tryings/i18n/translate.phtml:23
+#: Jbig3Tryings/view/jbig3-tryings/i18n/translate.phtml:24
+#: Jbig3Tryings/view/jbig3-tryings/i18n/translate.phtml:25
+#, php-format
+msgid "I have %d car"
+msgid_plural "I have %d cars"
+msgstr[0] "Ich habe %d Auto"
+msgstr[1] "Ich habe %d Autos"
+
+#~ msgid "Car"
+#~ msgid_plural "Cars"
+#~ msgstr[0] "Auto"
+#~ msgstr[1] "Autos"
+
+#~ msgid "Sie haben Auto(s) gekauft."
+#~ msgstr "Sie haben gekauft %d Autos."
+
+#~ msgid "Auto"
+#~ msgstr "1:auto2:autos"
+
+#~ msgid "We found %d products for you."
+#~ msgstr "Wir haben %d Produkte für Sie gefunden."
+
+#~ msgid "Home"
+#~ msgstr "zu hause"

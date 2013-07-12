@@ -1,0 +1,401 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Jbig3i18n\n"
+"POT-Creation-Date: 2013-06-26 12:12+0100\n"
+"PO-Revision-Date: 2013-06-26 12:14+0100\n"
+"Last-Translator: Gregory <gregory@n-28.com>\n"
+"Language-Team: Gregory <gregory@n-28.com>\n"
+"Language: deutsch\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: translate;translatePlural:1,2\n"
+"X-Poedit-Basepath: X:\\Dropbox\\Projekte\\workspace\\DefaultWorkSpace"
+"\\big5\\module\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: Jbig3I18n\n"
+
+#: Jbig3I18n/language/validate_scan.php:5
+#: Jbig3I18n/language/validate_scan.php:58
+#: Jbig3I18n/language/validate_scan.php:75
+#: Jbig3I18n/language/validate_scan.php:146
+msgid "Invalid type given. String, integer or float expected"
+msgstr "Ungültiger Typ angegeben. String, Integer oder Float erwartet"
+
+#: Jbig3I18n/language/validate_scan.php:6
+msgid "The input contains characters which are non alphabetic and no digits"
+msgstr ""
+"'%value%' enthält Zeichen welche keine Buchstaben und keine Ziffern sind"
+
+#: Jbig3I18n/language/validate_scan.php:7
+#: Jbig3I18n/language/validate_scan.php:12
+#: Jbig3I18n/language/validate_scan.php:57
+msgid "The input is an empty string"
+msgstr "'%value%' ist ein leerer String"
+
+#: Jbig3I18n/language/validate_scan.php:10
+#: Jbig3I18n/language/validate_scan.php:18
+#: Jbig3I18n/language/validate_scan.php:31
+#: Jbig3I18n/language/validate_scan.php:52
+#: Jbig3I18n/language/validate_scan.php:61
+#: Jbig3I18n/language/validate_scan.php:83
+#: Jbig3I18n/language/validate_scan.php:88
+#: Jbig3I18n/language/validate_scan.php:155
+#: Jbig3I18n/language/validate_scan.php:160
+msgid "Invalid type given. String expected"
+msgstr "Ungültiger Typ angegeben. String erwartet"
+
+#: Jbig3I18n/language/validate_scan.php:11
+msgid "The input contains non alphabetic characters"
+msgstr "'%value%' enthält Zeichen welche keine Buchstaben sind"
+
+#: Jbig3I18n/language/validate_scan.php:15
+msgid "The input failed checksum validation"
+msgstr "'%value%' hat die Prüfung der Checksumme nicht bestanden"
+
+#: Jbig3I18n/language/validate_scan.php:16
+msgid "The input contains invalid characters"
+msgstr "'%value%' enthält Zeichen welche nicht zugelassen sind"
+
+# kann nihct überstezt werden
+#: Jbig3I18n/language/validate_scan.php:17
+#, php-format
+msgid "The input should have a length of %length% characters"
+msgstr ""
+
+#: Jbig3I18n/language/validate_scan.php:21
+msgid "The input is not between '%min%' and '%max%', inclusively"
+msgstr ""
+"%value%' ist nicht zwischen '%min%' und '%max%', inklusive diesen Werten"
+
+#: Jbig3I18n/language/validate_scan.php:22
+msgid "The input is not strictly between '%min%' and '%max%'"
+msgstr "'%value%' ist nicht strikt zwischen '%min%' und '%max%'"
+
+#: Jbig3I18n/language/validate_scan.php:25
+msgid "The input is not valid"
+msgstr "%value%' ist nicht zulässig"
+
+#: Jbig3I18n/language/validate_scan.php:26
+msgid "An exception has been raised within the callback"
+msgstr "Eine Exception wurde im Callback geworfen"
+
+#: Jbig3I18n/language/validate_scan.php:29
+msgid "The input seems to contain an invalid checksum"
+msgstr "'%value%' scheint eine ungültige Prüfsumme zu enthalten"
+
+#: Jbig3I18n/language/validate_scan.php:30
+#: Jbig3I18n/language/validate_scan.php:56
+msgid "The input must contain only digits"
+msgstr "'%value%' darf nur Ziffern enthalten"
+
+#: Jbig3I18n/language/validate_scan.php:32
+msgid "The input contains an invalid amount of digits"
+msgstr "'%value%' enthält eine ungültige Anzahl an Ziffern"
+
+#: Jbig3I18n/language/validate_scan.php:33
+msgid "The input is not from an allowed institute"
+msgstr "'%value%' ist nicht von einem der erlaubten Institute"
+
+#: Jbig3I18n/language/validate_scan.php:34
+msgid "The input seems to be an invalid credit card number"
+msgstr "'%value%' scheint eine ungültige Kreditkarten-Nummer zu sein"
+
+#: Jbig3I18n/language/validate_scan.php:35
+#: Jbig3I18n/language/validate_scan.php:143
+msgid "An exception has been raised while validating the input"
+msgstr "Eine Exception wurde wärend der Prüfung von '%value%' geworfen"
+
+#: Jbig3I18n/language/validate_scan.php:37
+msgid "The form submitted did not originate from the expected site"
+msgstr ""
+"Die Eingabeziet für das Formular ist abgalufen. Bitte rufen Sie es erneut "
+"auf."
+
+#: Jbig3I18n/language/validate_scan.php:40
+msgid "Invalid type given. String, integer, array or DateTime expected"
+msgstr ""
+"Ungültiger Typ angegeben. String, Integer, Array oder DateTime erwartet."
+
+#: Jbig3I18n/language/validate_scan.php:41
+msgid "The input does not appear to be a valid date"
+msgstr "'%value%' scheint kein gültiges Datum zu sein"
+
+#: Jbig3I18n/language/validate_scan.php:42
+msgid "The input does not fit the date format '%format%'"
+msgstr "'%value%' passt nicht in das angegebene Datumsformat '%format%'"
+
+#: Jbig3I18n/language/validate_scan.php:45
+msgid "No record matching the input was found"
+msgstr "Es wurde kein Eintrag gefunden der '%value%' entspricht"
+
+#: Jbig3I18n/language/validate_scan.php:46
+msgid "A record matching the input was found"
+msgstr "Ein Eintrag der '%value%' entspricht wurde gefunden"
+
+#: Jbig3I18n/language/validate_scan.php:49
+#: Jbig3I18n/language/validate_scan.php:152
+msgid "The input is not a valid step"
+msgstr "%value%' ist kein zulässiger Schritt"
+
+#: Jbig3I18n/language/validate_scan.php:53
+msgid "The input does not appear to be a valid datetime"
+msgstr "'%value%' scheint kein gültiges Datum zu sein"
+
+#: Jbig3I18n/language/validate_scan.php:62
+msgid ""
+"The input is not a valid email address. Use the basic format local-"
+"part@hostname"
+msgstr ""
+"'%value%' ist keine gültige Emailadresse im Basisformat local-part@hostname"
+
+#: Jbig3I18n/language/validate_scan.php:63
+msgid "'%hostname%' is not a valid hostname for the email address"
+msgstr "'%hostname%' ist kein gültiger Hostname für die Emailadresse '%value%'"
+
+#: Jbig3I18n/language/validate_scan.php:64
+msgid ""
+"'%hostname%' does not appear to have any valid MX or A records for the email "
+"address"
+msgstr ""
+"'%hostname%' scheint keinen gültigen MX Eintrag für die Emailadresse '%value"
+"%' zu haben"
+
+#: Jbig3I18n/language/validate_scan.php:65
+msgid ""
+"'%hostname%' is not in a routable network segment. The email address should "
+"not be resolved from public network"
+msgstr ""
+"'%hostname%' ist in keinem routebaren Netzwerksegment. Die Emailadresse "
+"'%value%' sollte nicht vom öffentlichen Netz aus aufgelöst werden"
+
+# lässt sich nicht speichern
+#: Jbig3I18n/language/validate_scan.php:66
+#, php-format
+msgid "'%localPart%' can not be matched against dot-atom format"
+msgstr ""
+
+# lässt sich nicht speichern
+#: Jbig3I18n/language/validate_scan.php:67
+#, php-format
+msgid "'%localPart%' can not be matched against quoted-string format"
+msgstr ""
+
+#: Jbig3I18n/language/validate_scan.php:68
+msgid "'%localPart%' is not a valid local part for the email address"
+msgstr ""
+"'%localPart%' ist kein gültiger lokaler Teil für die Emailadresse '%value%'"
+
+#: Jbig3I18n/language/validate_scan.php:69
+msgid "The input exceeds the allowed length"
+msgstr "'%value%' ist länger als erlaubt"
+
+#: Jbig3I18n/language/validate_scan.php:72
+msgid "Invalid type given"
+msgstr "Ungültiger Typ angegeben."
+
+#: Jbig3I18n/language/validate_scan.php:76
+msgid "The input does not appear to be a float"
+msgstr "'%value%' scheint kein gültiges Float-Format zu sein"
+
+#: Jbig3I18n/language/validate_scan.php:79
+msgid "The input is not greater than '%min%'"
+msgstr "'%value%' ist nicht größer als '%min%'"
+
+#: Jbig3I18n/language/validate_scan.php:80
+msgid "The input is not greater or equal than '%min%'"
+msgstr "'%value%' ist nicht größer oder gleich als '%min%'"
+
+#: Jbig3I18n/language/validate_scan.php:84
+msgid "The input contains non-hexadecimal characters"
+msgstr "'%value%' enthält Zeichen welche nicht hexadezimal sind"
+
+#: Jbig3I18n/language/validate_scan.php:87
+msgid ""
+"The input appears to be a DNS hostname but the given punycode notation "
+"cannot be decoded"
+msgstr ""
+"'%value%' scheint ein DNS Hostname zu sein, aber die angegebene Punycode "
+"Schreibweise konnte nicht dekodiert werden"
+
+#: Jbig3I18n/language/validate_scan.php:89
+msgid ""
+"The input appears to be a DNS hostname but contains a dash in an invalid "
+"position"
+msgstr ""
+"'%value%' scheint ein DNS Hostname zu sein, enthält aber einen Bindestrich "
+"an einer ungültigen Position"
+
+#: Jbig3I18n/language/validate_scan.php:90
+msgid "The input does not match the expected structure for a DNS hostname"
+msgstr "'%value%' passt nicht in die erwartete Struktur für einen DNS Hostname"
+
+#: Jbig3I18n/language/validate_scan.php:91
+msgid ""
+"The input appears to be a DNS hostname but cannot match against hostname "
+"schema for TLD '%tld%'"
+msgstr ""
+"'%value%' scheint ein DNS Hostname zu sein, passt aber nicht in das Hostname "
+"Schema für die TLD '%tld%'"
+
+#: Jbig3I18n/language/validate_scan.php:92
+msgid "The input does not appear to be a valid local network name"
+msgstr "'%value%' scheint kein gültiger lokaler Netzerkname zu sein"
+
+#: Jbig3I18n/language/validate_scan.php:93
+msgid "The input does not appear to be a valid URI hostname"
+msgstr "'%value%' scheint kein gültiger URI Hostname zu sein"
+
+#: Jbig3I18n/language/validate_scan.php:94
+msgid "The input appears to be an IP address, but IP addresses are not allowed"
+msgstr ""
+"'%value%' scheint eine IP Adresse zu sein, aber IP Adressen sind nicht "
+"erlaubt"
+
+#: Jbig3I18n/language/validate_scan.php:95
+msgid ""
+"The input appears to be a local network name but local network names are not "
+"allowed"
+msgstr ""
+"'%value%' scheint ein lokaler Netzwerkname zu sein, aber lokale "
+"Netzwerknamen sind nicht erlaubt"
+
+#: Jbig3I18n/language/validate_scan.php:96
+msgid "The input appears to be a DNS hostname but cannot extract TLD part"
+msgstr ""
+"'%value%' scheint ein DNS Hostname zu sein, aber der TLD Teil konnte nicht "
+"extrahiert werden"
+
+#: Jbig3I18n/language/validate_scan.php:97
+msgid ""
+"The input appears to be a DNS hostname but cannot match TLD against known "
+"list"
+msgstr ""
+"'%value%' scheint ein DNS Hostname zu sein, aber die TLD wurde in der "
+"bekannten Liste nicht gefunden"
+
+#: Jbig3I18n/language/validate_scan.php:100
+msgid "Unknown country within the IBAN"
+msgstr "Unbekanntes Land in der IBAN '%value%'"
+
+#: Jbig3I18n/language/validate_scan.php:101
+msgid ""
+"Countries outside the Single Euro Payments Area (SEPA) are not supported"
+msgstr ""
+
+#: Jbig3I18n/language/validate_scan.php:102
+msgid "The input has a false IBAN format"
+msgstr "'%value%' enthält ein falsches IBAN Format"
+
+#: Jbig3I18n/language/validate_scan.php:103
+msgid "The input has failed the IBAN check"
+msgstr "Die IBAN Prüfung ist für '%value%' fehlgeschlagen"
+
+#: Jbig3I18n/language/validate_scan.php:106
+msgid "The two given tokens do not match"
+msgstr "Die zwei angegebenen Token stimmen nicht überein"
+
+#: Jbig3I18n/language/validate_scan.php:107
+msgid "No token was provided to match against"
+msgstr "Es wurde kein Token angegeben gegen den geprüft werden kann"
+
+#: Jbig3I18n/language/validate_scan.php:110
+msgid "The input was not found in the haystack"
+msgstr "'%value%' wurde im Haystack nicht gefunden"
+
+#: Jbig3I18n/language/validate_scan.php:113
+#: Jbig3I18n/language/validate_scan.php:120
+#: Jbig3I18n/language/validate_scan.php:140
+msgid "Invalid type given. String or integer expected"
+msgstr "Ungültiger Typ angegeben. String oder Integer erwartet"
+
+#: Jbig3I18n/language/validate_scan.php:114
+msgid "The input does not appear to be an integer"
+msgstr "'%value%' scheint kein gültiges Integer-Format zu sein"
+
+#: Jbig3I18n/language/validate_scan.php:117
+msgid "The input does not appear to be a valid IP address"
+msgstr "'%value%' scheint keine gültige IP-Adresse zu sein"
+
+#: Jbig3I18n/language/validate_scan.php:121
+msgid "The input is not a valid ISBN number"
+msgstr "%value%' ist keine gültige ISBN Nummer"
+
+#: Jbig3I18n/language/validate_scan.php:124
+msgid "The input is not an instance of '%className%'"
+msgstr "'%value%' ist keine Instanz von  '%className%'"
+
+#: Jbig3I18n/language/validate_scan.php:127
+msgid "The input is not less than '%max%'"
+msgstr "'%value%' ist nicht kleiner als '%max%'"
+
+#: Jbig3I18n/language/validate_scan.php:128
+msgid "The input is not less or equal than '%max%'"
+msgstr "'%value%' ist nicht kleiner oder gleich als '%max%'"
+
+#: Jbig3I18n/language/validate_scan.php:131
+msgid "Value is required and can't be empty"
+msgstr "Es wird ein Wert benötigt. Dieser darf nicht leer sein"
+
+#: Jbig3I18n/language/validate_scan.php:132
+msgid "Invalid type given. String, integer, float, boolean or array expected"
+msgstr ""
+"Ungültiger Typ angegeben. String, Integer, Float, Boolean oder Array erwartet"
+
+#: Jbig3I18n/language/validate_scan.php:135
+msgid "The input does not match a phone number format"
+msgstr "'%value%' scheint kein gültiges Telefonnummern-Format zu sein"
+
+#: Jbig3I18n/language/validate_scan.php:136
+msgid "The country provided is currently unsupported"
+msgstr "Das angegebne Land wird zur Zeit nihct unterstützt."
+
+#: Jbig3I18n/language/validate_scan.php:137
+msgid "Invalid type given.  String expected"
+msgstr "Ungültiger Typ angegeben. String erwartet"
+
+#: Jbig3I18n/language/validate_scan.php:141
+#: Jbig3I18n/language/validate_scan.php:142
+msgid "The input does not appear to be a postal code"
+msgstr "'%value%' scheint keine gültige Postleitzahl zu sein"
+
+#: Jbig3I18n/language/validate_scan.php:147
+msgid "The input does not match against pattern '%pattern%'"
+msgstr "'%value%' stimmt nihct mit mit dem Pattern '%pattern%' überein"
+
+#: Jbig3I18n/language/validate_scan.php:151
+msgid "Invalid value given. Scalar expected"
+msgstr "Ungültiger Typ angegeben. Scalar erwartet"
+
+#: Jbig3I18n/language/validate_scan.php:156
+msgid "The input is less than %min% characters long"
+msgstr "'%value%' ist weniger als %min% Zeichen lang"
+
+#: Jbig3I18n/language/validate_scan.php:157
+msgid "The input is more than %max% characters long"
+msgstr "'%value%' ist mehr als %max% Zeichen lang"
+
+#: Jbig3I18n/language/validate_scan.php:161
+msgid "The input does not appear to be a valid Uri"
+msgstr "'%value%' scheint kein gültiger Uri zu sein"
+
+#~ msgid "'%value%' must contain only digits"
+#~ msgstr "'%value%' darf nur Ziffern enthalten"
+
+#~ msgid "'%value%' is an empty string"
+#~ msgstr "'%value%' ist ein leerer String"
+
+#~ msgid "'%value%' must contain between 13 and 19 digits"
+#~ msgstr "'%value%' muss zwischen 13 und 19 Ziffern enthalten"
+
+#~ msgid "Luhn algorithm (mod-10 checksum) failed on '%value%'"
+#~ msgstr ""
+#~ "Der Luhn Algorithmus (Mod-10 Checksumme) ist auf '%value%' fehlgeschlagen"
+
+#~ msgid "'%value%' is not valid"
+#~ msgstr "''%value%' ist nicht gültig"
+
+#~ msgid "'%value%' contains invalid characters"
+#~ msgstr "'%value%' enthält ungültige Zeichen"

@@ -1,0 +1,110 @@
+<?php 
+/**
+ * ZF2 Buch Kapitel 5
+ * 
+ * Das Buch "Zend Framework 2 - Von den Grundlagen bis zur fertigen Anwendung"
+ * von Ralf Eggert ist im Addison-Wesley Verlag erschienen. 
+ * ISBN 978-3-8273-2994-3
+ * 
+ * @package    Application
+ * @author     Ralf Eggert <r.eggert@travello.de>
+ * @copyright  Alle Listings sind urheberrechtlich geschützt!
+ * @link       http://www.zendframeworkbuch.de/ und http://www.awl.de/2994
+ */
+
+/**
+ * Listing 5.2 view script
+ * 
+ * @package    Application
+ */
+?>
+<div class="row">
+<div class="span9">
+<h1>Listing 5.2</h1>
+<h3>Konfiguration des Event-Managers mit Closure-Funktionen</h3>
+<pre>
+&lt;?php 
+// setup autoloading
+require_once BIG5_ROOT . '/vendor/autoload.php';
+
+// configure Autoloader
+$loader = new Zend\Loader\StandardAutoloader();
+$loader->registerNamespace('Pizza', BIG5_ROOT . '/module/Pizza/src/Pizza');
+$loader->register();
+
+// namespaces
+use Zend\EventManager\EventManager;
+use Jbig3Tryings\EventManager\Example03\Model\Order;
+use Jbig3Tryings\EventManager\Example03\Service\OrderService;
+
+// configure event manager
+$eventManager = new EventManager();
+$eventManager->attach('postOrder', function ($e) {
+    echo "Send order confirmation<br />";
+}, 300);
+$eventManager->attach('postOrder', function ($e) {
+    echo "Update stock<br />";
+}, 100);
+$eventManager->attach('postOrder', function ($e) {
+    echo "Bake the pizza<br />";
+}, 200);
+$eventManager->attach('preOrder', function ($e) {
+    echo "Check stock<br />";
+});
+
+// configure order service
+$orderService = new OrderService();
+$orderService->setEventManager($eventManager);
+
+// create order
+$order = new Order();
+$order->customer = 'Rainer Zufall';
+$order->items    = array(
+    'PizzaSalami',
+    'PizzaHawaii',
+);
+
+// save order
+$orderService->saveOrder($order);
+</pre>
+<h3>Ausgabe</h3>
+<pre>
+<?php 
+// namespaces
+use Zend\EventManager\EventManager;
+use Jbig3Tryings\EventManager\Example03\Model\Order;
+use Jbig3Tryings\EventManager\Example03\Service\OrderService;
+
+// configure event manager
+$eventManager = new EventManager();
+$eventManager->attach('postOrder', function ($e) {
+    echo "Send order confirmation<br />";
+}, 300);
+$eventManager->attach('postOrder', function ($e) {
+    echo "Update stock<br />";
+}, 100);
+$eventManager->attach('postOrder', function ($e) {
+    echo "Bake the pizza<br />";
+}, 200);
+$eventManager->attach('preOrder', function ($e) {
+    echo "Check stock<br />";
+});
+
+// configure order service
+$orderService = new OrderService();
+$orderService->setEventManager($eventManager);
+
+// create order
+$order = new Order();
+$order->customer = 'Rainer Zufall';
+$order->items    = array(
+    'PizzaSalami',
+    'PizzaHawaii',
+);
+
+// save order
+$orderService->saveOrder($order);
+?>
+</pre>
+</div>
+</div>

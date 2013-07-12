@@ -1,0 +1,14 @@
+<?php
+
+echo 'Begrüßung aus FormController: <b>' . $this->test . '</b>';
+
+$this->form->prepare();
+echo $this->form()->openTag($this->form);
+echo $this->formRow($this->form->get('firstname'));
+echo $this->formRow($this->form->get('surname'));
+echo $this->formRow($this->form->get('email'));
+echo $this->formRow($this->form->get('password'));
+echo $this->formRow($this->form->get('id'));
+echo $this->formRow($this->form->get('csrf'));
+echo $this->formSubmit($this->form->get('submit'));
+echo $this->form()->closeTag();

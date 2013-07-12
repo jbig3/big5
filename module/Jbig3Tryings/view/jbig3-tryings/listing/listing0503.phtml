@@ -1,0 +1,84 @@
+<?php 
+/**
+ * ZF2 Buch Kapitel 5
+ * 
+ * Das Buch "Zend Framework 2 - Von den Grundlagen bis zur fertigen Anwendung"
+ * von Ralf Eggert ist im Addison-Wesley Verlag erschienen. 
+ * ISBN 978-3-8273-2994-3
+ * 
+ * @package    Application
+ * @author     Ralf Eggert <r.eggert@travello.de>
+ * @copyright  Alle Listings sind urheberrechtlich geschützt!
+ * @link       http://www.zendframeworkbuch.de/ und http://www.awl.de/2994
+ */
+
+/**
+ * Listing 5.3 view script
+ * 
+ * @package    Application
+ */
+?>
+<div class="row">
+<div class="span9">
+<h1>Listing 5.3</h1>
+<h3>OrderListener implementiert <code>ListenerAggregateInterface</code></h3>
+<pre>
+&lt;?php 
+namespace Pizza\Listener;
+
+use Zend\EventManager\EventInterface;
+use Zend\EventManager\EventManagerInterface;
+use Zend\EventManager\ListenerAggregateInterface;
+
+class OrderListener implements ListenerAggregateInterface
+{
+    protected $listeners = array();
+
+    public function attach(EventManagerInterface $events)
+    {
+        $this->listeners[] = $events->attach(
+            'postOrder', array($this, 'sendConfirmation'), 300
+        );
+        $this->listeners[] = $events->attach(
+            'postOrder', array($this, 'updateStock'), 100
+        );
+        $this->listeners[] = $events->attach(
+            'postOrder', array($this, 'bakePizza'), 200
+        );
+        $this->listeners[] = $events->attach(
+            'preOrder', array($this, 'checkStock'), 100
+        );
+    }
+
+    public function detach(EventManagerInterface $events)
+    {
+        foreach ($this->listeners as $index => $listener) {
+            if ($events->detach($listener)) {
+                unset($this->listeners[$index]);
+            }
+        }
+    }
+
+    public function sendConfirmation(EventInterface $e)
+    {
+        echo "Send order confirmation&lt;br /&gt;";
+    }
+
+    public function updateStock(EventInterface $e)
+    {
+        echo "Update stock&lt;br /&gt;";
+    }
+
+    public function bakePizza(EventInterface $e)
+    {
+        echo "Bake the pizza&lt;br /&gt;";
+    }
+
+    public function checkStock(EventInterface $e)
+    {
+        echo "Check stock&lt;br /&gt;";
+    }
+}
+</pre>
+</div>
+</div>

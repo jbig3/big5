@@ -1,0 +1,31 @@
+<?php
+
+use Zend\Mvc\Controller\AbstractActionController,
+    Zend\View\Model\ViewModel;
+
+use Zend\Debug\Debug;
+
+use Zend\Validator\EmailAddress;
+use Zend\Validator\Hostname;
+use Zend\Validator\Isbn;
+
+echo 'Begrüßung aus Validate-View: <b>' . $this->validate . '</b>';
+
+$value = '1-2345-6789-0';
+$validator = new Isbn(array('separator' => '-'));
+Debug::dump($validator->isValid($value));
+Debug::dump($validator->getMessages());
+
+
+$value = 'horst@das@gibt@es@nicht.biz';
+$validator = new EmailAddress(array('allow' => Hostname::ALLOW_DNS));
+Debug::dump($validator->isValid($value));
+Debug::dump($validator->getMessages());
+
+$value = 'longlongString';
+$value = 'lon';
+$min = 4;
+$max = 5;
+$validator = new Zend\Validator\StringLength(array('min' => $min, 'max' => $max));
+Debug::dump($validator->isValid($value));
+Debug::dump($validator->getMessages());

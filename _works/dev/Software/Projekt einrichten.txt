@@ -1,0 +1,146 @@
+
+    ################################################
+        Git
+    ################################################
+
+        Installation:
+
+            - https://code.google.com/p/msysgit/downloads/list?q=full+installer+official+git
+
+        Konfiguration:
+
+            - nicht notwenig
+
+    ################################################
+        GitHub for Windwos (für Upload)
+    ################################################
+
+        Installation
+
+            - http://github-windows.s3.amazonaws.com/GitHubSetup.exe
+            - https://help.github.com/articles/set-up-git
+
+        Konfiguration:
+
+            - Download:
+                - nichts notwendig
+
+            - Upload
+                - SSH Key:
+                    - https://help.github.com/articles/generating-ssh-keys
+                    - GitBash: ssh-keygen -t rsa
+                    - FileName: leer lassen
+                    - Password eingeben: 123456 (nicht das github-Passwort)
+                    - SSH-Key auf github hinterlegen:
+                        - c:/Dokumente und Einstellungen/Gregory/.ssh/id_rsa.pub (öffentlicher Schlüssel)
+                        - https://github.com/settings/ssh
+
+
+    ################################################
+        PHPStorm:
+    ################################################
+
+        Installation:
+
+
+        Konfiguration:
+		
+            - Neues Projekt aus git:
+                - VCS/Checkout from VersionControl / GitHub
+                - Git URL:git://github.com/zendframework/ZendSkeletonApplication.git
+                - Parent Dir: lokaler Webserver
+                - DIR Name: projektName
+
+	################################################
+        Console 2:
+    ################################################
+
+		Installation:
+		
+			- http://sourceforge.net/projects/console/
+			
+		Konfiguration:
+		
+			- php.ini checken
+				- CLI: Strg+Umschalt+x
+				- php -i
+	
+	
+    ################################################
+        Composer:
+    ################################################
+
+        Installation
+
+            - http://getcomposer.org/doc/00-intro.md
+
+        Konfiguration:
+
+			- cd ProjektRoot
+            - php composer.phar self-update
+			
+		Usage:
+			ZF2 laden:
+				- $ php composer.phar install
+				
+	        ZendDeveloperTools
+			DoctrineModule
+			DoctrineORMModule laden:
+				
+				- composer.json:
+					        "zendframework/zend-developer-tools" :  "dev-master",
+							"doctrine/doctrine-orm-module": "0.*",
+							"zf-commons/zfc-user-doctrine-orm": "0.*"
+				
+				- $ php composer update
+				
+				- application.config:
+					- Module freischalten:
+						'ZendDeveloperTools',
+						'DoctrineModule', 
+						'DoctrineORMModule'
+			
+	################################################
+        vHost:
+    ################################################
+	
+		C:Windwos/System32/drivers/etc/hosts
+		
+			Win7: Editor als Admin ausführen:
+			
+				- 127.0.0.1	leistungstest
+			
+		httpd.conf/httpd-vhosts.conf
+		
+            # leistungstest-neu
+            <VirtualHost *:80>
+               DocumentRoot "X:\Dropbox\Projekte\workspace\DefaultWorkSpace\leistungstest-neu\public"
+               ServerName leistungstest-neu
+
+               SetEnv APPLICATION_ENV development
+
+               <Directory "X:\Dropbox\Projekte\workspace\DefaultWorkSpace\leistungstest-neu\public">
+                   Options Indexes MultiViews FollowSymLinks
+                   AllowOverride All
+                   Order allow,deny
+                   Allow from all
+               </Directory>
+            </VirtualHost>
+
+		- Apache Neustart
+		- Erreichbarkeitstest: leistungstest/
+
+
+    ################################################
+        PHPStorm: / Module laden
+    ################################################
+
+        Konfiguration:
+
+            löschen:
+                - config/
+                - data/
+                - module/
+                - public/
+            ersetzen mit:
+                - Download aus Dropbox

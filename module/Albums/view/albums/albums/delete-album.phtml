@@ -1,0 +1,24 @@
+<?php
+
+$title = 'Platte löschen';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+
+<p>Willst Du wirklich
+    '<?php echo $this->escapeHtml($album->title); ?>' von
+    '<?php echo $this->escapeHtml($album->artist); ?>' löschen?
+</p>
+<?php
+$url = $this->url('albums', array(
+    'action' => 'delete-album',
+    'id'     => $this->id,
+));
+?>
+<form action="<?php echo $url; ?>" method="post">
+<div>
+    <input type="hidden" name="id" value="<?php echo (int) $album->id; ?>" />
+    <input type="submit" name="del" value="Klar, kein Problem!" />
+    <input type="submit" name="del" value="Lieber doch nicht…" />
+</div>
+</form>

@@ -1,0 +1,67 @@
+<h1><?php echo $this->testausgabe; ?></h1>
+<p><?php echo $this->date; ?></p>
+
+<div class="inner-form">
+    <div class="box box-100">
+        <div class="boxin">
+            <div class="header">
+                <h1>Users</h1>
+            </div>
+            <div class="content">
+                <table><?php if (count($this->doctrineTest)): ?>
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>name</th>
+                        <th>decimal</th>
+                        <th>float</th>
+                        <th>date</th>
+                        <th>time</th>
+                        <th>datetime</th>
+                        <th>text</th>
+                        <th>boolean</th>
+                    </tr>
+                    </thead>
+                    <tbody><?php foreach ($this->doctrineTest as $doctrineTest): ?>
+                    <tr>
+                        <td>
+                            <?php echo $doctrineTest->getId(); ?>
+                        </td>
+                        <td>
+                            <?php echo $doctrineTest->getName(); ?>
+                        </td>
+                        <td>
+                            <?php echo $doctrineTest->getDecimal(); ?>
+                        </td>
+                        <td>
+                            <?php echo $doctrineTest->getFloat(); ?>
+                        </td>
+                        <td>
+<!--                            --><?php //echo $this->date($doctrineTest->getDate(), 'long') ?>
+                        </td>
+                        <td>
+                            <?php // echo $doctrineTest->time; ?>
+                        </td>
+                        <td>
+                            <?php // echo $doctrineTest->datetime; ?>
+                        </td>
+                        <td>
+                            <?php echo $doctrineTest->getText(); ?>
+                        </td>
+                        <td>
+                            <?php echo $doctrineTest->getBoolean(); ?>
+                        </td>
+                        <td>
+                            <ul>
+                                <li><a href="<?php // echo $this->url(array(), 'user-update') . '/' . $doctrineTest->id; ?>">Update</a></li>
+                                <li><a href="<?php // echo $this->url(array(), 'user-delete') . '/' . $doctrineTest->id; ?>">Delete</a></li>
+                            </ul>
+                        </td>
+                    </tr><?php endforeach ?>
+                    </tbody><?php endif ?>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

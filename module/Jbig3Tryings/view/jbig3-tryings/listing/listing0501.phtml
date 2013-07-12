@@ -1,0 +1,74 @@
+<?php 
+/**
+ * ZF2 Buch Kapitel 5
+ * 
+ * Das Buch "Zend Framework 2 - Von den Grundlagen bis zur fertigen Anwendung"
+ * von Ralf Eggert ist im Addison-Wesley Verlag erschienen. 
+ * ISBN 978-3-8273-2994-3
+ * 
+ * @package    Application
+ * @author     Ralf Eggert <r.eggert@travello.de>
+ * @copyright  Alle Listings sind urheberrechtlich geschützt!
+ * @link       http://www.zendframeworkbuch.de/ und http://www.awl.de/2994
+ */
+
+/**
+ * Listing 5.1 view script
+ * 
+ * @package    Application
+ */
+?>
+<div class="row">
+<div class="span9">
+<h1>Listing 5.1</h1>
+<h3>Order Service implementiert <code>EventManagerAwareInterface</code></h3>
+<pre>
+&lt;?php
+namespace Pizza\Service;
+
+use Pizza\Model\Order;
+use Zend\EventManager\EventManager;
+use Zend\EventManager\EventManagerInterface;
+use Zend\EventManager\EventManagerAwareInterface;
+use Zend\Math\Rand;
+
+class OrderService implements EventManagerAwareInterface
+{
+    protected $events;
+
+    public function setEventManager(EventManagerInterface $events)
+    {
+        $events->setIdentifiers(array(
+            __CLASS__,
+            get_called_class(),
+        ));
+        $this->events = $events;
+        return $this;
+    }
+
+    public function getEventManager()
+    {
+        if (null === $this->events) {
+            $this->setEventManager(new EventManager());
+        }
+        return $this->events;
+    }
+    
+    public function saveOrder(Order $order)
+    {
+        $order->id = Rand::getInteger(100000, 999999);
+        
+        $this->getEventManager()->trigger('preOrder', __CLASS__);
+        
+        $filePath = realpath(BIG5_ROOT . '/data/order') . '/';
+        $fileName = $filePath . $order->id . '.txt';
+        file_put_contents($fileName, serialize($order));
+        
+        echo "Save order " . $order->id . "&lt;br /&gt;";
+        
+        $this->getEventManager()->trigger('postOrder', __CLASS__);
+    }
+}
+</pre>
+</div>
+</div>

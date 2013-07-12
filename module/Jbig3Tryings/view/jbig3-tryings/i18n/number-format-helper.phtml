@@ -1,0 +1,17 @@
+<?php
+
+
+echo '<h3> Nutzung des NumberFormatHelper</h3>';
+
+// numberFormat(number $number[, int $formatStyle[, int $formatType[, string $locale ]]])
+// Types: siehe http://de.php.net/manual/de/class.numberformatter.php
+
+
+echo 'DECIMAL / TYPE_DEFAULT: ' . $this->numberFormat($this->number, NumberFormatter::DECIMAL, NumberFormatter::TYPE_DEFAULT) . '<br />';
+echo 'PERCENT / TYPE_DEFAULT: ' . $this->numberFormat($this->number, NumberFormatter::PERCENT, NumberFormatter::TYPE_DEFAULT) . '<br />';
+echo 'ROUND_DOWN / TYPE_DEFAULT: ' . $this->numberFormat($this->number, NumberFormatter::ROUND_DOWN, NumberFormatter::TYPE_DEFAULT) . '<br />';
+
+echo '<h3> Nutzung des CurrencyFormatHelper</h3>';
+
+echo 'Währungs-Helper: ' . $this->currencyFormat($this->price, "EUR") . '<br />';
+

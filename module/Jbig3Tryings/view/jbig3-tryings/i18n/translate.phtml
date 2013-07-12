@@ -1,0 +1,34 @@
+<?php
+
+namespace Jbig3Tryings;
+
+$text_domain = __NAMESPACE__;
+$time = $this->date($this->dateString, 'timeonly');
+
+
+echo '<h3>' . $this->translate('Nutzung des TranslateHelper') . '</h3>';
+
+// translate(string $message[, string $textDomain[, string $locale ]])
+
+echo 'Standardtext: ' . $this->translate("Some translated text.") . '<br />';
+echo 'Standardtext mit text_domain: ' . $this->translate("Translated text from a custom text domain.", $text_domain) . '<br />';
+echo 'Standardtext mit Variablen: ' . sprintf($this->translate("The current time is %s.", $text_domain), $time) . '<br />';
+
+
+
+echo '<h3>' . $this->translate('Nutzung des TranslatePluralHelper') . '</h3>';
+
+// translatePlural(string $singular, string $plural, int $number[, string $textDomain[, string $locale ]])
+
+
+echo 'Beispiel null: ' . $this->translatePlural('I have %d car', 'I have %d cars', '0', $text_domain) . '<br />';
+echo 'Beispiel eins: ' . $this->translatePlural('I have %d car', 'I have %d cars', '1', $text_domain) . '<br />';
+echo 'Beispiel zwei: ' . $this->translatePlural('I have %d car', 'I have %d cars', '2', $text_domain) . '<br />';
+
+$number0 = 0;
+$number1 = 1;
+$number2 = 2;
+
+echo 'Beispiel Variablen: ' . sprintf($this->translatePlural('I have %d car', 'I have %d cars', $number0, $text_domain), $number0) . '<br />';
+echo 'Beispiel Variablen: ' . sprintf($this->translatePlural('I have %d car', 'I have %d cars', $number1, $text_domain), $number1) . '<br />';
+echo 'Beispiel Variablen: ' . sprintf($this->translatePlural('I have %d car', 'I have %d cars', $number2, $text_domain), $number2) . '<br />';

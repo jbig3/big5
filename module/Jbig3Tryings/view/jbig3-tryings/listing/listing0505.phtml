@@ -1,0 +1,106 @@
+<?php 
+/**
+ * ZF2 Buch Kapitel 5
+ * 
+ * Das Buch "Zend Framework 2 - Von den Grundlagen bis zur fertigen Anwendung"
+ * von Ralf Eggert ist im Addison-Wesley Verlag erschienen. 
+ * ISBN 978-3-8273-2994-3
+ * 
+ * @package    Application
+ * @author     Ralf Eggert <r.eggert@travello.de>
+ * @copyright  Alle Listings sind urheberrechtlich geschützt!
+ * @link       http://www.zendframeworkbuch.de/ und http://www.awl.de/2994
+ */
+
+/**
+ * Listing 5.5 view script
+ * 
+ * @package    Application
+ */
+?>
+<div class="row">
+<div class="span9">
+<h1>Listing 5.5</h1>
+<h3>Beispiel für den Einsatz des <code>SharedEventManager</code></h3>
+<pre>
+&lt;?php 
+// setup autoloading
+require_once BIG5_ROOT . '/vendor/autoload.php';
+
+// configure Autoloader
+$loader = new Zend\Loader\StandardAutoloader();
+$loader->registerNamespace('Pizza', BIG5_ROOT . '/module/Pizza/src/Pizza');
+$loader->register();
+
+// namespaces
+use Zend\EventManager\EventManager;
+use Zend\EventManager\SharedEventManager;
+use Pizza\Listener\OrderListener;
+use Pizza\Model\Order;
+use Pizza\Service\OrderService;
+
+// configure shared manager
+$sharedEventManager = new SharedEventManager();
+$sharedEventManager->attach('Pizza\Service\OrderService', 'postOrder', function ($e) {
+    echo "shared postOrder&lt;br /&gt;";
+}, 250);
+
+// configure event manager
+$eventManager = new EventManager();
+$eventManager->setSharedManager($sharedEventManager);
+$eventManager->attachAggregate(new OrderListener(), 100);
+
+// configure order service
+$orderService = new OrderService();
+$orderService->setEventManager($eventManager);
+
+// create order
+$order = new Order();
+$order->customer = 'Rainer Zufall';
+$order->items    = array(
+    'PizzaSalami',
+    'PizzaHawaii',
+);
+
+// save order
+$orderService->saveOrder($order);
+</pre>
+<h3>Ausgabe</h3>
+<pre>
+<?php 
+// namespaces
+use Zend\EventManager\EventManager;
+use Zend\EventManager\SharedEventManager;
+use Jbig3Tryings\EventManager\Example03\Listener\OrderListener;
+use Jbig3Tryings\EventManager\Example03\Model\Order;
+use Jbig3Tryings\EventManager\Example03\Service\OrderService;
+
+// configure shared manager
+$sharedEventManager = new SharedEventManager();
+$sharedEventManager->attach('Pizza\Service\OrderService', 'postOrder', function ($e) {
+    echo "shared postOrder<br />";
+}, 250);
+
+// configure event manager
+$eventManager = new EventManager();
+$eventManager->setSharedManager($sharedEventManager);
+$eventManager->attachAggregate(new OrderListener(), 100);
+
+// configure order service
+$orderService = new OrderService();
+$orderService->setEventManager($eventManager);
+
+// create order
+$order = new Order();
+$order->customer = 'Rainer Zufall';
+$order->items    = array(
+    'PizzaSalami',
+    'PizzaHawaii',
+);
+
+// save order
+$orderService->saveOrder($order);
+?>
+</pre>
+</div>
+</div>

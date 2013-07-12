@@ -1,0 +1,23 @@
+<?php
+
+
+echo '<h3> Nutzung des DateFormatHelper</h3>';
+
+// dateFormat(mixed $date[, int $dateType[, int $timeType[, string $locale ]]])
+// NONE, FULL, LONG, MEDIUM, SHORT,
+// ??! TRADITIONAL, GREGORIAN
+
+echo 'FULL / FULL: ' . $this->dateFormat($this->date, IntlDateFormatter::FULL, IntlDateFormatter::FULL) . '<br />';
+echo 'LONG / LONG: ' . $this->dateFormat($this->date, IntlDateFormatter::LONG, IntlDateFormatter::LONG) . '<br />';
+echo 'MEDIUM / MEDIUM: ' . $this->dateFormat($this->date, IntlDateFormatter::MEDIUM, IntlDateFormatter::MEDIUM) . '<br />';
+echo 'SHORT / SHORT: ' . $this->dateFormat($this->date, IntlDateFormatter::SHORT, IntlDateFormatter::SHORT) . '<br />';
+echo 'SHORT / NONE: ' . $this->dateFormat($this->date, IntlDateFormatter::SHORT, IntlDateFormatter::NONE) . '<br />';
+
+
+echo '<h3> Nutzung des Jbig3Base/View/Helper/Date</h3>';
+
+echo 'long: ' . $this->date($this->dateString, 'long') . '<br />';
+echo 'medium: ' . $this->date($this->dateString) . '<br />';
+echo 'short: ' . $this->date($this->dateString, 'short') . '<br />';
+echo 'dateonly: ' . $this->date($this->dateString, 'dateonly') . '<br />';
+echo 'timeonly: ' . $this->date($this->dateString, 'timeonly') . '<br />';
