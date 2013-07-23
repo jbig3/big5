@@ -177,3 +177,16 @@
         Installation:
 
             - http://www.mysqldumper.de/
+
+
+    ################################################
+        PHP intl
+    ################################################
+
+
+        Installation:
+
+            - http://windows.php.net/download/
+            - php_intl.dll nach /ext/ kopieren
+            - php.ini anpassen:
+                - extension=php_intl.dll einkommentieren
