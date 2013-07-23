@@ -3,8 +3,8 @@
 namespace Jbig3Base\Entity\Mapper;
 
 use Doctrine\ORM\EntityManager;
-use Zend\Stdlib\Hydrator\HydratorInterface,
-    Zend\Debug\Debug;
+
+use Zend\Debug\Debug;
 
 class BaseMapper implements MapperInterface
 {
@@ -22,23 +22,24 @@ class BaseMapper implements MapperInterface
         $this->entity = $entity;
     }
 
-    public function findBy($field, $value)
+    public function findAll()
+    {
+        $entity = $this->em->getRepository($this->entity)->findAll();
+        return $entity;
+    }
+
+    public function findOneBy($field, $value)
     {
         $er = $this->em->getRepository($this->entity)->findOneBy(array($field => $value));
         return $er;
     }
 
-    public function insert($entity)
+    public function remove($entityObj)
     {
-        return $this->persist($entity);
+            $this->em->remove($entityObj);
+            $this->em->flush();
     }
 
-    public function update($entity, $field, $value)
-    {
-        $entity = $this->findBy($field, $value);
-        $entity->setIsActive(1);
-        return $this->persist($entity);
-    }
 
     public function persist($entity)
     {

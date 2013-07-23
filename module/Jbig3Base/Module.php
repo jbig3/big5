@@ -79,8 +79,9 @@ class Module implements
     {
         return array(
             'invokables' => array(
-                'date' => 'Jbig3Base\View\Helper\Date',
+                'dateHelper' => 'Jbig3Base\View\Helper\Date',
                 'showForm' => 'Jbig3Base\View\Helper\ShowForm',
+                'yesNo' => 'Jbig3Base\View\Helper\YesNo',
             ),
             'factories' => array(
                 'showMessages' => 'Jbig3Base\View\Helper\ShowMessagesFactory',
@@ -90,7 +91,11 @@ class Module implements
 
     public function getControllerPluginConfig()
     {
-        return array();
+        return array(
+            'invokables' => array(
+                'dump' => 'Jbig3Base\Controller\Plugin\Dump',
+            )
+        );
     }
 
     public function getControllerConfig()

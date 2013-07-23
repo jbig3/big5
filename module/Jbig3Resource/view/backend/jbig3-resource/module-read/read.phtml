@@ -1,0 +1,44 @@
+<div class="header">
+    <h1>Modules</h1>
+    <?php echo $this->showMessages(); ?>
+</div>
+<div class="content">
+    <a href="<?php echo $this->url('backend-resource-module-create'); ?>">Neu anlegen</a>
+    <?php if (count($this->moduleRead)): ?>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th><?php echo $this->translate('ID'); ?></th>
+                <th><?php echo $this->translate('Name'); ?></th>
+                <th><?php echo $this->translate('Description'); ?></th>
+                <th><?php echo $this->translate('Ist Aktiv'); ?></th>
+                <th><?php echo $this->translate('Actions'); ?></th>
+            </tr>
+            </thead>
+            <tbody>
+        <?php foreach ($this->moduleRead as $moduleRead): ?>
+                <tr>
+                    <td>
+                        <?php echo $this->escapeHtml($moduleRead->getId()); ?>
+                    </td>
+                    <td>
+                        <?php echo $this->escapeHtml($moduleRead->getName()); ?>
+                    </td>
+                    <td>
+                        <?php echo $this->escapeHtml($moduleRead->getDescription()); ?>
+                    </td>
+                    <td>
+                        <?php echo $this->yesNo($this->escapeHtml($moduleRead->getIsActive())); ?>
+                    </td>
+                    <td>
+                        <a href="<?php echo $this->url('backend-resource-module-update') . $moduleRead->getId(); ?>">Update</a> |
+                        <a href="<?php echo $this->url('backend-resource-module-delete') . $moduleRead->getId(); ?>">Delete</a>
+                    </td>
+                </tr>
+        <?php endforeach ?>
+    </tbody>
+    <?php endif ?>
+    </table>
+</div>
+
+

@@ -1,0 +1,75 @@
+Schema validieren:
+
+	CLI
+		cd vendor/bin/
+		doctrine-module orm:validate-schema
+
+	[Mapping]  OK - The mapping files are correct.
+	[Database] OK - The database schema is in sync with the mapping files.
+
+
+Entity anlegen
+
+	module/ModulName/src/ModulName/Entity/EntityName
+
+		- Member anlegen aus
+			§ ERR-Model oder Requirements
+		- getter und setter anlegen
+		- Entity bekannt machen (module.config.php)
+
+Repository erstellen
+
+	module/ModulName/src/ModulName/Entity/Repository/EntityNameRepository
+
+		- nur den Rumpf anlegen
+
+
+Schema validieren:
+
+	CLI
+		cd vendor/bin/
+		doctrine-module orm:validate-schema
+
+	[Mapping]  OK - The mapping files are correct.
+	[Database] FAIL - The database schema is not in sync with the current mapping file.
+
+
+SQL Tabelle anlegen
+
+	CLI
+		cd vendor/bin/
+		doctrine-module orm:schema-tool:create --dump-sql
+
+
+	Workbench
+
+		- notwenige Teile kopieren
+		- ausführen
+
+Schema validieren:
+
+	CLI
+		cd vendor/bin/
+		doctrine-module orm:validate-schema
+
+	[Mapping]  OK - The mapping files are correct.
+	[Database] OK - The database schema is in sync with the mapping files.
+
+
+Proxy anlegen
+
+	CLI
+		cd vendor/bin/
+		doctrine-module orm:generate-proxies
+
+		=> data\DoctrineORMModule\Proxy
+
+
+MySQL Workbench ERR-Model
+
+	- ERR-model erstellen
+	- speichern in _works/
+
+Testdaten anlegen
+
+	- Workbench

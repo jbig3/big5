@@ -1,0 +1,11 @@
+ZF2 / Collections:
+
+First, notice how the brand element is added: we specify it to be of type Application\Form\BrandFieldset.
+This is how you handle a OneToOne relationship. When the form is validated, the BrandFieldset will first be populated,
+and will return a Brand entity (as we have specified a ClassMethods hydrator, and bound the fieldset to a Brand entity using
+the setObject() method). This Brandentity will then be used to populate the Product entity by calling the setBrand() method.
+
+
+View:
+$brand = $product->get('brand');
+echo $this->formRow($brand->get('name'));

@@ -1,0 +1,46 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Jbig3User\n"
+"POT-Creation-Date: 2013-06-26 12:42+0100\n"
+"PO-Revision-Date: 2013-06-26 12:43+0100\n"
+"Last-Translator: Gregory <gregory@n-28.com>\n"
+"Language-Team: Gregory <gregory@n-28.com>\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: translate;translatePlural:1,2\n"
+"X-Poedit-Basepath: X:\\Dropbox\\Projekte\\workspace\\DefaultWorkSpace"
+"\\big5\\module\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: Jbig3User\n"
+
+#: Jbig3User/src/Jbig3User/Controller/RegisterController.php:48
+msgid ""
+"Sich haben sich erfolgreich registriert. Bitte aktivieren Sie jetzt Ihr "
+"Konto."
+msgstr ""
+"Sich haben sich erfolgreich registriert. Bitte aktivieren Sie jetzt Ihr "
+"Konto."
+
+#: Jbig3User/src/Jbig3User/Form/UserBaseForm.php:54
+msgid "FIRSTNAME_LABEL"
+msgstr "Vorname"
+
+#: Jbig3User/src/Jbig3User/Form/UserBaseForm.php:69
+msgid "SURNAME_LABEL"
+msgstr "Nachname"
+
+#: Jbig3User/src/Jbig3User/Form/UserBaseForm.php:83
+msgid "EMAIL_LABEL"
+msgstr "Email"
+
+#: Jbig3User/src/Jbig3User/Form/UserBaseForm.php:97
+msgid "PASSWORD_LABEL"
+msgstr "Passwort"
+
+#: Jbig3User/src/Jbig3User/Form/UserBaseForm.php:122
+msgid "REGISTER_SUBMIT"
+msgstr "Registrieren"

@@ -33,16 +33,26 @@ class Date extends AbstractHelper
     /**
      * get string date and output it
      * 
-     * @param string $dateString
+     * @param string $date
      * @param string $mode
      * @return boolean
      */
-    public function __invoke($dateString, $mode = 'medium')
+    public function __invoke($date, $mode = 'medium')
     {
-        if ($dateString == '0000-00-00 00:00:00') {
-            return '-';
+
+        if(is_string($date)){
+            if ($date == '0000-00-00 00:00:00') {
+                return '-';
+            }
+
+            $dateTime = new DateTime($date);
         }
-        
+
+        if(is_object($date)){
+
+            $dateTime = $date;
+        }
+
         switch ($mode) {
             case 'long':
                 $dateType = IntlDateFormatter::LONG;
@@ -70,9 +80,7 @@ class Date extends AbstractHelper
                 $timeType = IntlDateFormatter::MEDIUM;
                 break;
         }
-        
-        $dateTime = new DateTime($dateString);
-        
+
         return $this->getView()->dateFormat($dateTime, $dateType, $timeType);
     }
 }

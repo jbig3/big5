@@ -1,0 +1,29 @@
+<div class="header">
+    <h1>Update Module</h1>
+</div>
+<?php
+$formName = $this->moduleUpdate;
+$fieldsetName = $formName->get('moduleUpdateFieldset');
+
+//Zend\Debug\Debug::dump($formName);
+//$class = 'form-horizontal';
+//echo $this->showForm($moduleCreateForm, $class);
+
+if ($formName) {
+    $formName->prepare();
+
+    echo $this->form()->openTag($formName);
+
+    echo $this->formRow($fieldsetName->get('id'));
+
+    echo $this->formRow($fieldsetName->get('name'));
+    echo $this->formRow($fieldsetName->get('description'));
+    echo $this->formRow($fieldsetName->get('isActive'));
+
+    echo $this->formSubmit($formName->get('submit'));
+
+    echo $this->form()->closeTag();
+}
+
+
+

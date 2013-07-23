@@ -12,7 +12,7 @@ namespace Jbig3Base\Controller;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
-class IndexController extends BaseController
+class IndexController extends BaseControllerAbstract
 {
     public function indexAction()
     {

@@ -1,0 +1,66 @@
+<?php
+if ($this->form) {
+    $this->form->prepare();
+
+    echo $this->form()->openTag($this->form);
+
+    echo $this->formRow($this->form->get('crud-object-select-controller-fieldset')
+        ->get('id'));
+
+    echo $this->formRow($this->form->get('crud-object-select-controller-fieldset')
+        ->get('name'));
+
+    echo $this->formRow($this->form->get('crud-object-select-controller-fieldset')
+        ->get('description'));
+
+    echo $this->formRow($this->form->get('crud-object-select-controller-fieldset')
+        ->get('module'));
+
+//    echo $this->formRow($this->form->get('module'));
+
+    echo $this->formSubmit($this->form->get('submit'));
+    echo $this->form()->closeTag();
+//Zend\Debug\Debug::dump($this->form);
+}
+?>
+<!--<div class="header">-->
+<!--    <h1>Insert OneToMany</h1>-->
+<!--</div>-->
+<!--    --><?php
+//    $form = $this->form;
+//    $class = 'form-horizontal';
+//
+//    echo $this->showForm($form, $class);
+//if ($this->form) {
+//    $this->form->prepare();
+//
+//
+//    echo $this->form()->openTag($this->form);
+//
+//    echo $this->formRow($this->form->get('user')
+//        ->get('id'));
+//
+//    echo $this->formRow($this->form->get('user')
+//        ->get('email'));
+//
+//    echo $this->formRow($this->form->get('user')
+//        ->get('name'));
+//
+//    echo $this->formRow($this->form->get('user')
+//        ->get('userAddress')->get('street'));
+//
+//    echo $this->formRow($this->form->get('user')
+//        ->get('userAddresses')->get('streetNumber'));
+//
+//    echo $this->formRow($this->form->get('user')
+//        ->get('userAddresses')->get('zipcode'));
+//
+//    echo $this->formRow($this->form->get('user')
+//        ->get('userAddresses')->get('city'));
+//
+//    echo $this->formSubmit($this->form->get('submit'));
+//    echo $this->form()->closeTag();
+//
+//    echo $this->formSubmit($this->form->get('submit'));
+//    echo $this->form()->closeTag();
+//}

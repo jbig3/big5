@@ -1,0 +1,26 @@
+<div class="header">
+    <h1>Update Controller</h1>
+</div>
+<?php
+$formName = $this->controllerUpdate;
+$fieldsetName = $formName->get('controllerUpdateFieldset');
+
+if ($formName) {
+    $formName->prepare();
+
+    echo $this->form()->openTag($formName);
+
+    echo $this->formRow($fieldsetName->get('id'));
+
+    echo $this->formRow($fieldsetName->get('name'));
+    echo $this->formRow($fieldsetName->get('description'));
+    echo $this->formRow($fieldsetName->get('isActive'));
+    echo $this->formRow($fieldsetName->get('module'));
+
+    echo $this->formSubmit($formName->get('submit'));
+
+    echo $this->form()->closeTag();
+}
+
+
+

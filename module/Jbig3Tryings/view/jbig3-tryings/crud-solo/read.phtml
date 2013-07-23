@@ -1,0 +1,37 @@
+<div class="header">
+    <h1>Solo</h1>
+</div>
+<div class="content">
+    <?php if (count($this->solo)): ?>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th><?php echo $this->translate('ID'); ?></th>
+            <th><?php echo $this->translate('Name'); ?></th>
+            <th><?php echo $this->translate('Beschreibung'); ?></th>
+            <th><?php echo $this->translate('Actions'); ?></th>
+        </tr>
+        </thead>
+    <tbody><?php foreach ($this->solo as $solo): ?>
+    <tr>
+        <td>
+            <?php echo $this->escapeHtml($solo->getId()); ?>
+        </td>
+        <td>
+            <?php echo $this->escapeHtml($solo->getName()); ?>
+        </td>
+        <td>
+            <?php echo $this->escapeHtml($solo->getDescription()); ?>
+        </td>
+        <td>
+            <a href="<?php echo $this->url('crud-solo-update') . $solo->getId(); ?>">Update</a> |
+            <a href="<?php echo $this->url('crud-solo-delete') . $solo->getId(); ?>">Delete</a>
+        </td>
+    </tr>
+        <?php endforeach ?>
+    </tbody>
+    <?php endif ?>
+</table>
+</div>
+
+

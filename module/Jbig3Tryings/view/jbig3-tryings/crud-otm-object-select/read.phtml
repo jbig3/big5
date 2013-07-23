@@ -1,0 +1,84 @@
+<div class="header">
+    <h1>OTM Collection</h1>
+</div>
+<div class="content">
+    <a href="<?php echo $this->url('crud-otm-collection-create'); ?>">Neu anlegen</a>
+    <?php if (count($this->otm)): ?>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th><?php echo $this->translate('ID'); ?></th>
+                <th><?php echo $this->translate('Email'); ?></th>
+                <th><?php echo $this->translate('Name'); ?></th>
+                <th><?php echo $this->translate('Actions'); ?></th>
+            </tr>
+            </thead>
+            <tbody>
+        <?php foreach ($this->otm as $otm): ?>
+                <tr>
+                    <td>
+                        <?php echo $this->escapeHtml($otm->getId()); ?>
+                    </td>
+                    <td>
+                        <?php echo $this->escapeHtml($otm->getEmail()); ?>
+                    </td>
+                    <td>
+                        <?php echo $this->escapeHtml($otm->getName()); ?>
+                    </td>
+                    <td>
+                        <a href="<?php echo $this->url('crud-otm-collection-update') . $otm->getId(); ?>">Update</a> |
+                        <a href="<?php echo $this->url('crud-otm-collection-delete-user') . $otm->getId(); ?>">Delete</a>
+                    </td>
+                </tr>
+            <?php if (count($otm->getUserAddresses())): ?>
+                <tr>
+                    <td></td>
+                    <td colspan="3">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th><?php echo $this->translate('ID'); ?></th>
+                                <th><?php echo $this->translate('Strasse'); ?></th>
+                                <th><?php echo $this->translate('Nummer'); ?></th>
+                                <th><?php echo $this->translate('PLZ'); ?></th>
+                                <th><?php echo $this->translate('Ort'); ?></th>
+                                <th><?php echo $this->translate('Actions'); ?></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <?php foreach ($otm->getUserAddresses() as $address): ?>
+                            <tr>
+                                <td>
+                                    <?php echo $this->escapeHtml($address->getId()); ?>
+                                </td>
+                                <td>
+                                    <?php echo $this->escapeHtml($address->getStreet()); ?>
+                                </td>
+                                <td>
+                                    <?php echo $this->escapeHtml($address->getStreetNumber()); ?>
+                                </td>
+                                <td>
+                                    <?php echo $this->escapeHtml($address->getZipcode()); ?>
+                                </td>
+                                <td>
+                                    <?php echo $this->escapeHtml($address->getCity()); ?>
+                                </td>
+                                <td>
+                                    <!--            <a href="-->
+                                        <?php //echo $this->url('crud-solo-update') . $solo->getId(); ?><!--">Update</a> |-->
+                                    <a href="<?php echo $this->url('crud-otm-collection-delete-user-address') . $address->getId(); ?>">Delete</a>
+                                </td>
+                            </tr>
+                        <?php endforeach ?>
+                        </tbody>
+                    </table>
+                    </td>
+                </tr>
+        <?php endif ?>
+        <?php endforeach ?>
+    </tbody>
+    <?php endif ?>
+    </table>
+</div>
+
+

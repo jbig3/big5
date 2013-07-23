@@ -65,6 +65,24 @@ return array(
         ),
     ),
 
+    'doctrine' => array(
+        'driver' => array(
+            'Jbig3BaseEntity' => array(
+                'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
+                'cache' => 'array',
+                'paths' => array(
+                    __DIR__ . '/../src/Jbig3Base/Entity'
+                )
+            ),
+
+            'orm_default' => array(
+                'drivers' => array(
+                    'Jbig3Base\Entity' => 'Jbig3BaseEntity'
+                )
+            )
+        )
+    ),
+
 //    'doctrine' => array(
 //        'connection' => array(
 //            'orm_default' => array(

@@ -1,0 +1,26 @@
+<div class="header">
+    <h1>Create Controller</h1>
+</div>
+<?php
+$formName = $this->controllerCreate;
+$fieldsetName = $formName->get('controllerCreateFieldset');
+
+if ($formName) {
+    $formName->prepare();
+
+    echo $this->form()->openTag($formName);
+
+    echo $this->formRow($fieldsetName->get('id'));
+
+    echo $this->formRow($fieldsetName->get('name'));
+    echo $this->formRow($fieldsetName->get('description'));
+    echo $this->formRow($fieldsetName->get('module'));
+    echo $this->formRow($fieldsetName->get('isActive'));
+
+    echo $this->formSubmit($formName->get('submit'));
+
+    echo $this->form()->closeTag();
+}
+
+
+

@@ -1,0 +1,48 @@
+<div class="header">
+    <h1>Controllers</h1>
+    <?php echo $this->showMessages(); ?>
+</div>
+<div class="content">
+    <a href="<?php echo $this->url('backend-resource-controller-create'); ?>">Neu anlegen</a>
+    <?php if (count($this->controllerRead)): ?>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th><?php echo $this->translate('ID'); ?></th>
+                <th><?php echo $this->translate('Module'); ?></th>
+                <th><?php echo $this->translate('Name'); ?></th>
+                <th><?php echo $this->translate('Description'); ?></th>
+                <th><?php echo $this->translate('Ist Aktiv'); ?></th>
+                <th><?php echo $this->translate('Actions'); ?></th>
+            </tr>
+            </thead>
+            <tbody>
+        <?php foreach ($this->controllerRead as $controllerRead): ?>
+                <tr>
+                    <td>
+                        <?php echo $this->escapeHtml($controllerRead->getId()); ?>
+                    </td>
+                    <td>
+                        <?php echo $this->escapeHtml($controllerRead->getModule()->getName()); ?>
+                    </td>
+                    <td>
+                        <?php echo $this->escapeHtml($controllerRead->getName()); ?>
+                    </td>
+                    <td>
+                        <?php echo $this->escapeHtml($controllerRead->getDescription()); ?>
+                    </td>
+                    <td>
+                        <?php echo $this->yesNo($this->escapeHtml($controllerRead->getIsActive())); ?>
+                    </td>
+                    <td>
+                        <a href="<?php echo $this->url('backend-resource-controller-update') . $controllerRead->getId(); ?>">Update</a> |
+                        <a href="<?php echo $this->url('backend-resource-controller-delete') . $controllerRead->getId(); ?>">Delete</a>
+                    </td>
+                </tr>
+        <?php endforeach ?>
+    </tbody>
+    <?php endif ?>
+    </table>
+</div>
+
+

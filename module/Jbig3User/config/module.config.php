@@ -5,7 +5,8 @@ return array(
 
     'view_manager' => array(
         'template_path_stack' => array(
-            __DIR__ . '/../view'
+            __DIR__ . '/../view/frontend',
+            __DIR__ . '/../view/backend',
         )
     ),
 
@@ -22,19 +23,8 @@ return array(
                 'options' => array(
                     'route' => '/user/register',
                     'defaults' => array(
-                        'controller' => 'registerControllerFactory-jbig3user',
+                        'controller' => 'frontendRegisterControllerFactory-jbig3user',
                         'action' => 'register',
-                    )
-                )
-            ),
-
-            'user-activate' => array(
-                'type' => 'Zend\Mvc\Router\Http\Literal',
-                'options' => array(
-                    'route' => '/user/activate',
-                    'defaults' => array(
-                        'controller' => 'activateControllerFactory-jbig3user',
-                        'action' => 'activate',
                     )
                 )
             ),
@@ -44,7 +34,7 @@ return array(
                 'options' => array(
                     'route' => '/user/activate-form',
                     'defaults' => array(
-                        'controller' => 'activateControllerFactory-jbig3user',
+                        'controller' => 'frontendActivateControllerFactory-jbig3user',
                         'action' => 'activate-form',
                     )
                 )
@@ -55,8 +45,76 @@ return array(
                 'options' => array(
                     'route' => '/user/activate-mail',
                     'defaults' => array(
-                        'controller' => 'activateControllerFactory-jbig3user',
+                        'controller' => 'FrontendActivateControllerFactory-jbig3user',
                         'action' => 'activate-mail',
+                    )
+                )
+            ),
+
+            'admin-user' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route' => '/admin/user',
+                    'defaults' => array(
+                        'controller' => 'backendReadControllerFactory-jbig3user',
+                        'action' => 'read',
+                    )
+                )
+            ),
+
+            'admin-user-insert' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route' => '/admin/user/insert',
+                    'defaults' => array(
+                        'controller' => 'backendInsertControllerFactory-jbig3user',
+                        'action' => 'insert',
+                    )
+                )
+            ),
+
+            'admin-user-update' => array(
+                'type' => 'Zend\Mvc\Router\Http\Segment',
+                'options' => array(
+                    'route' => '/admin/user/update/:id',
+                    'defaults' => array(
+                        'controller' => 'backendUserUpdateControllerFactory-jbig3user',
+                        'action' => 'update',
+                        'id' => ''
+                    )
+                )
+            ),
+
+            'admin-user-delete' => array(
+                'type' => 'Zend\Mvc\Router\Http\Segment',
+                'options' => array(
+                    'route' => '/admin/user/delete/:id',
+                    'defaults' => array(
+                        'controller' => 'backendUserDeleteControllerFactory-jbig3user',
+                        'action' => 'delete',
+                        'id' => ''
+                    )
+                )
+            ),
+
+            'admin-role' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route' => '/admin/role',
+                    'defaults' => array(
+                        'controller' => 'backendRoleReadControllerFactory-jbig3user',
+                        'action' => 'read',
+                    )
+                )
+            ),
+
+            'admin-role-insert' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route' => '/admin/role/insert',
+                    'defaults' => array(
+                        'controller' => 'backendRoleInsertControllerFactory-jbig3user',
+                        'action' => 'insert',
                     )
                 )
             ),
@@ -69,13 +127,13 @@ return array(
                 'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
                 'cache' => 'array',
                 'paths' => array(
-                    __DIR__ . '/../src/Jbig3User/Entity'
+                    __DIR__ . '/../src/Jbig3User/General/Entity'
                 )
             ),
 
             'orm_default' => array(
                 'drivers' => array(
-                    'Jbig3User\Entity' => 'entityDriver-jbig3user'
+                    'Jbig3User\General\Entity' => 'entityDriver-jbig3user'
                 )
             )
         )

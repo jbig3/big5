@@ -8,9 +8,7 @@
  */
 
 namespace Jbig3Tryings\Entity;
-use Doctrine\ORM\Mapping as ORM,
-    Doctrine\Common\Collections\ArrayCollection;
-use Jbig3Base\Entity\BaseEntity;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(
@@ -20,7 +18,7 @@ use Jbig3Base\Entity\BaseEntity;
  * @ORM\HasLifecycleCallbacks
  */
 
-class DoctrineTestEntity extends BaseEntity
+class DoctrineTestEntity
 {
 
     /**

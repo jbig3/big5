@@ -1,0 +1,3 @@
+- https://github.com/doctrine/DoctrineModule/blob/master/docs/form-element.md
+- http://stackoverflow.com/questions/14142488/zend-framework-2-hydrator-strategy-for-doctrine-relationship-not-working
+- http://stackoverflow.com/questions/13475624/create-zf-2-forms-from-doctrine-entities

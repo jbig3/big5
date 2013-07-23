@@ -63,6 +63,10 @@ class Module implements
                 'listing' => 'Jbig3Tryings\EventManager\Example03\Controller\ListingController',
                 'i18n' => 'Jbig3Tryings\I18n\Controller\I18nController',
                 'DoctrineTestController' => 'Jbig3Tryings\Doctrine\DoctrineTestController',
+                'CrudSoloController' => 'Jbig3Tryings\Crud\Solo\CrudSoloController',
+                'CrudOtmCollectionController' => 'Jbig3Tryings\Crud\OneToMany\Collection\CrudOtmCollectionController',
+                'CrudOtmObjectSelectController' => 'Jbig3Tryings\Crud\OneToMany\ObjectSelect\CrudOtmObjectSelectController',
+                'CrudMtmController' => 'Jbig3Tryings\Crud\ManyToMany\CrudMtmController',
             ),
             'factories' => array(
                 'jbig3Tryings-serviceManager-factory-factoryControllerFactory'

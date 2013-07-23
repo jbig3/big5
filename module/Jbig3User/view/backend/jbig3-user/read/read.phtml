@@ -1,0 +1,56 @@
+<div class="header">
+    <h1>Users</h1>
+</div>
+<div class="content">
+    <?php if (count($this->userObj)): ?>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th><?php echo $this->translate('ID'); ?></th>
+            <th><?php echo $this->translate('Firstname'); ?></th>
+            <th><?php echo $this->translate('Surname'); ?></th>
+            <th><?php echo $this->translate('Email'); ?></th>
+            <th><?php echo $this->translate('Roles'); ?></th>
+            <th><?php echo $this->translate('RegisterDate'); ?></th>
+            <th><?php echo $this->translate('isActive'); ?></th>
+            <th><?php echo $this->translate('Actions'); ?></th>
+        </tr>
+        </thead>
+    <tbody><?php foreach ($this->userObj as $userObj): ?>
+    <tr>
+        <td>
+            <?php echo $this->escapeHtml($userObj->getId()); ?>
+        </td>
+        <td>
+            <?php echo $this->escapeHtml($userObj->getFirstname()); ?>
+        </td>
+        <td>
+            <?php echo $this->escapeHtml($userObj->getSurname()); ?>
+        </td>
+        <td>
+            <?php echo $this->escapeHtml($userObj->getEmail()); ?>
+        </td>
+        <td><?php if (count($userObj->getRoles())): ?>
+            <?php foreach ($userObj->getRoles() as $userRole): ?>
+                <?php echo $this->escapeHtml($userRole->getName()) . '<br>'; ?>
+                <?php endforeach ?>
+            <?php endif ?>
+        </td>
+        <td>
+            <?php echo $this->dateHelper($userObj->getRegisterDate());?>
+        </td>
+        <td>
+            <?php echo $this->yesNo($userObj->getIsActive()); ?>
+        </td>
+        <td>
+            <a href="<?php echo $this->url('admin-user-update') . $userObj->getId(); ?>">Update</a> |
+            <a href="<?php echo $this->url('admin-user-delete') . $userObj->getId(); ?>">Delete</a>
+        </td>
+    </tr>
+        <?php endforeach ?>
+    </tbody>
+    <?php endif ?>
+</table>
+</div>
+
+

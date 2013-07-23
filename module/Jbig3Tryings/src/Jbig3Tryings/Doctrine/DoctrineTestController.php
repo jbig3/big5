@@ -2,7 +2,7 @@
 namespace Jbig3Tryings\Doctrine;
 use Zend\View\Model\ViewModel;
 
-use Jbig3Base\Controller\BaseController;
+use Jbig3Base\Controller\BaseControllerAbstract;
 
 
 /**
@@ -10,7 +10,7 @@ use Jbig3Base\Controller\BaseController;
  * @version 1.0
  * @created 02-Jun-2013 06:43:18
  */
-class DoctrineTestController extends BaseController
+class DoctrineTestController extends BaseControllerAbstract
 {
     // TODO: implementieren
 

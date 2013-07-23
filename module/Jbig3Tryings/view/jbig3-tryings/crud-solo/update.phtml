@@ -1,0 +1,18 @@
+<?php
+if($this->form){
+    $this->form->prepare();
+
+    echo $this->form()->openTag($this->form);
+
+    echo $this->formRow($this->form->get('solo')
+        ->get('id'));
+
+    echo $this->formRow($this->form->get('solo')
+        ->get('name'));
+
+    echo $this->formRow($this->form->get('solo')
+        ->get('description'));
+
+    echo $this->formSubmit($this->form->get('submit'));
+    echo $this->form()->closeTag();
+}

@@ -30,13 +30,13 @@ class I18nController extends AbstractActionController
 
     public function dateFormatHelperAction(){
 
-        $date = new DateTime();
+        $dateObj = new DateTime();
 
         // zB. aus einer DB
         $dateString = '2013-10-23 20:15:00';
 
         return array(
-            'date' => $date,
+            'dateObj' => $dateObj,
             'dateString' => $dateString
         );
     }

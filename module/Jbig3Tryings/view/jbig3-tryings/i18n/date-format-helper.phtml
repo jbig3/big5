@@ -7,17 +7,25 @@ echo '<h3> Nutzung des DateFormatHelper</h3>';
 // NONE, FULL, LONG, MEDIUM, SHORT,
 // ??! TRADITIONAL, GREGORIAN
 
-echo 'FULL / FULL: ' . $this->dateFormat($this->date, IntlDateFormatter::FULL, IntlDateFormatter::FULL) . '<br />';
-echo 'LONG / LONG: ' . $this->dateFormat($this->date, IntlDateFormatter::LONG, IntlDateFormatter::LONG) . '<br />';
-echo 'MEDIUM / MEDIUM: ' . $this->dateFormat($this->date, IntlDateFormatter::MEDIUM, IntlDateFormatter::MEDIUM) . '<br />';
-echo 'SHORT / SHORT: ' . $this->dateFormat($this->date, IntlDateFormatter::SHORT, IntlDateFormatter::SHORT) . '<br />';
-echo 'SHORT / NONE: ' . $this->dateFormat($this->date, IntlDateFormatter::SHORT, IntlDateFormatter::NONE) . '<br />';
+echo 'FULL / FULL: ' . $this->dateFormat($this->dateObj, IntlDateFormatter::FULL, IntlDateFormatter::FULL) . '<br />';
+echo 'LONG / LONG: ' . $this->dateFormat($this->dateObj, IntlDateFormatter::LONG, IntlDateFormatter::LONG) . '<br />';
+echo 'MEDIUM / MEDIUM: ' . $this->dateFormat($this->dateObj, IntlDateFormatter::MEDIUM, IntlDateFormatter::MEDIUM) . '<br />';
+echo 'SHORT / SHORT: ' . $this->dateFormat($this->dateObj, IntlDateFormatter::SHORT, IntlDateFormatter::SHORT) . '<br />';
+echo 'SHORT / NONE: ' . $this->dateFormat($this->dateObj, IntlDateFormatter::SHORT, IntlDateFormatter::NONE) . '<br />';
 
 
 echo '<h3> Nutzung des Jbig3Base/View/Helper/Date</h3>';
 
-echo 'long: ' . $this->date($this->dateString, 'long') . '<br />';
-echo 'medium: ' . $this->date($this->dateString) . '<br />';
-echo 'short: ' . $this->date($this->dateString, 'short') . '<br />';
-echo 'dateonly: ' . $this->date($this->dateString, 'dateonly') . '<br />';
-echo 'timeonly: ' . $this->date($this->dateString, 'timeonly') . '<br />';
+echo '<h4> Objekt - Übergabe</h4>';
+echo 'long: ' . $this->dateHelper($this->dateObj, 'long') . '<br />';
+echo 'medium: ' . $this->dateHelper($this->dateObj) . '<br />';
+echo 'short: ' . $this->dateHelper($this->dateObj, 'short') . '<br />';
+echo 'dateonly: ' . $this->dateHelper($this->dateObj, 'dateonly') . '<br />';
+echo 'timeonly: ' . $this->dateHelper($this->dateObj, 'timeonly') . '<br />';
+
+echo '<h4> Stringübergabe</h4>';
+echo 'long: ' . $this->dateHelper($this->dateString, 'long') . '<br />';
+echo 'medium: ' . $this->dateHelper($this->dateString) . '<br />';
+echo 'short: ' . $this->dateHelper($this->dateString, 'short') . '<br />';
+echo 'dateonly: ' . $this->dateHelper($this->dateString, 'dateonly') . '<br />';
+echo 'timeonly: ' . $this->dateHelper($this->dateString, 'timeonly') . '<br />';

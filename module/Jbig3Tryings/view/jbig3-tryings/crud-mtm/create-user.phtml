@@ -1,0 +1,28 @@
+<?php
+if ($this->form) {
+    $this->form->prepare();
+
+    echo $this->form()->openTag($this->form);
+
+    echo $this->formRow($this->form->get('crud-mtm-user-roles-fieldset')
+        ->get('id'));
+
+    echo $this->formRow($this->form->get('crud-mtm-user-fieldset')
+        ->get('firstname'));
+    echo $this->formRow($this->form->get('crud-mtm-user-fieldset')
+        ->get('surname'));
+    echo $this->formRow($this->form->get('crud-mtm-user-fieldset')
+        ->get('email'));
+    echo $this->formRow($this->form->get('crud-mtm-user-fieldset')
+        ->get('password'));
+    echo $this->formRow($this->form->get('crud-mtm-user-fieldset')
+        ->get('isActive'));
+    echo $this->formRow($this->form->get('crud-mtm-user-fieldset')
+        ->get('roles'));
+
+//    echo $this->formCollection($this->form->get('crud-mtm-user-fieldset')
+//        ->get('roles'));
+
+    echo $this->formSubmit($this->form->get('submit'));
+    echo $this->form()->closeTag();
+}

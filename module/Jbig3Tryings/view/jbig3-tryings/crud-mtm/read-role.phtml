@@ -1,0 +1,35 @@
+<div class="header">
+    <h1>OTM Collection</h1>
+</div>
+<div class="content">
+    <a href="<?php echo $this->url('crud-mtm-role-create'); ?>">Role anlegen</a>
+    <?php if (count($this->role)): ?>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th><?php echo $this->translate('ID'); ?></th>
+                <th><?php echo $this->translate('Name'); ?></th>
+                <th><?php echo $this->translate('Actions'); ?></th>
+            </tr>
+            </thead>
+            <tbody>
+        <?php foreach ($this->role as $role): ?>
+                <tr>
+                    <td>
+                        <?php echo $this->escapeHtml($role->getId()); ?>
+                    </td>
+                    <td>
+                        <?php echo $this->escapeHtml($role->getName()); ?>
+                    </td>
+                    <td>
+                        <a href="<?php echo $this->url('crud-mtm-role-update') . $role->getId(); ?>">Update</a> |
+                        <a href="<?php echo $this->url('crud-mtm-role-delete') . $role->getId(); ?>">Delete</a>
+                    </td>
+                </tr>
+        <?php endforeach ?>
+    </tbody>
+    <?php endif ?>
+    </table>
+</div>
+
+

@@ -9,7 +9,9 @@ return array(
         'Jbig3I18n',
         'Jbig3Mail',
         'Jbig3User',
-        'Jbig3Tryings'
+        'Jbig3Tryings',
+        'Jbig3Resource',
+        'Jbig3Cfm',
     ),
 
     // These are various options for the listeners attached to the ModuleManager
